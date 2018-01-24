@@ -48,10 +48,16 @@ def student_add():
 
     return render_template("display_new_student.html", first=first_name, last=last_name, github=github)
 
-@app.route("/projects")
+@app.route("/project")
 def projects():
     """Show project description"""
 
+    title = request.args.get('title')
+
+    project_info = hackbright.get_project_by_title(title)
+
+
+    return render_template("project.html", title=title, project_info=project_info)
 
 
 if __name__ == "__main__":
