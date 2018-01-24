@@ -7,12 +7,12 @@
     Description: {{ desc }}
     <br>
     Max Grade: {{ max_grade }}
-
+    <br>
     Students:
     <ul>
-        {% for item in assignment %}
-            <li>Username: {{ item[0] }}
-                <br>Grade: {{ item[1] }}</li>
+        {% for github, grade in grades %}
+            <li>Username: <a href="/student?github={{ github }}">{{ github }}</a>
+                <br>Grade: {{ grade }}</li>
         {% endfor %}
     </ul>
 
