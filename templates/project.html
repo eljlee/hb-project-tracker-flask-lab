@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>{{ title }} Project</title>
+    <h1>{{ title }}</h1>
+</head>
+<body>
+    Description: {{ desc }}
+    <br>
+    Max Grade: {{ max_grade }}
+
+    Students:
+    <ul>
+        {% for item in assignment %}
+            <li>Username: {{ item[0] }}
+                <br>Grade: {{ item[1] }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
